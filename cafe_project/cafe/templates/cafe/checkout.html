@@ -1,0 +1,17 @@
+{% extends 'cafe/base.html' %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформление заказа</title>
+</head>
+<body>
+    <h1>Оформление заказа</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Вы уверены, что хотите оформить заказ?</h2>
+        <button type="submit">Подтвердить заказ</button>
+    </form>
+    <a href="{% url 'cart' %}">Назад в корзину</a>
+</body>
+</html>

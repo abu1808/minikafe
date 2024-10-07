@@ -1,0 +1,20 @@
+{% extends 'cafe/base.html' %}
+
+{% block title %}Меню{% endblock %}
+
+{% block content %}
+    <h1>Меню</h1>
+    <ul>
+        {% for menu_item in menu_items %}
+            <li>
+                <h2>{{ menu_item.name }}</h2>
+                <p>{{ menu_item.description }}</p>
+                <p>Цена: {{ menu_item.price }} сом</p>
+                <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                <button>
+                    <a href="{% url 'add_to_cart' menu_item.id %}">Добавить в корзину</a>
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

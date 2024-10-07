@@ -1,0 +1,26 @@
+{% extends 'cafe/base.html' %}
+
+{% block title %}Ваши заказы{% endblock %}
+
+{% block content %}
+    <h1>Ваши заказы</h1>
+    <table class="orders-table">
+        <thead>
+            <tr>
+                <th>ID Заказа</th>
+                <th>Сумма</th>
+                <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.totalPrice }} сом</td>
+                <td>{{ order.isPaid|yesno:"Оплачен,Не оплачен" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'menu' %}" class="back-to-menu-button">Вернуться в меню</a>
+{% endblock %}

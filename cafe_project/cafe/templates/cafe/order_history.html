@@ -1,0 +1,31 @@
+{% extends 'cafe/base.html' %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/main.js' %}" defer></script>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>История заказов</title>
+</head>
+<body>
+    <header>
+        <h1>История заказов</h1>
+        <a href="{% url 'menu' %}">Назад к меню</a>
+    </header>
+    <main>
+        <div class="order-history">
+            {% for order in orders %}
+                <div class="order-item">
+                    <p>Заказ #{{ order.id }}</p>
+                    <p>Адрес доставки: {{ order.delivery_address }}</p>
+                    <p>Дата: {{ order.created_at }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

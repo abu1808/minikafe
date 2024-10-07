@@ -1,0 +1,20 @@
+{% extends 'cafe/base.html' %}
+
+{% block content %}
+  <h2>Администрирование Меню</h2>
+  <div class="menu-items main-content">
+    <!-- Добавлен класс main-content для анимации -->
+    {% for item in menu_items %}
+      <div class="menu-item">
+        <img src="{{ item.image.url }}" alt="{{ item.name }}" />
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.short_description }}</p>
+        <p>Цена: {{ item.price }} сом</p>
+
+        <!-- Кнопка для редактирования блюда -->
+        <a href="{% url 'admin:cafe_menuitem_change' item.id %}" class="button">Редактировать</a>
+        <a href="{% url 'admin:cafe_menuitem_delete' item.id %}" class="button" onclick="return confirm('Вы уверены, что хотите удалить это блюдо?')">Удалить</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

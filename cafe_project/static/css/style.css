@@ -1,0 +1,178 @@
+/* Общее стилизование */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #e63946; /* Красный цвет заголовка */
+}
+
+/* Стили для меню */
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+li {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px;
+    width: 300px; /* Ширина карточки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+li:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для изображений */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #e63946; /* Красный цвет кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px; /* Размер шрифта */
+}
+
+button:hover {
+    background-color: #d62839; /* Более темный красный при наведении */
+    transform: translateY(-2px); /* Плавный подъем кнопки */
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Анимация для загрузки страницы */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px; /* Уменьшение размера заголовка */
+    }
+
+    ul {
+        flex-direction: column; /* Изменение направления на колонку */
+        align-items: center; /* Центрирование элементов */
+    }
+
+    li {
+        width: 90%; /* Ширина карточки на мобильных устройствах */
+        margin: 10px 0; /* Уменьшение отступов */
+    }
+
+    button {
+        width: 100%; /* Кнопка на всю ширину карточки */
+        padding: 12px; /* Увеличение внутреннего отступа кнопки */
+        font-size: 18px; /* Увеличение размера шрифта кнопки */
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column; /* Вертикальная ориентация для мобильных */
+        align-items: center;
+    }
+
+    nav a {
+        padding: 10px;
+        margin: 5px 0;
+        width: 100%; /* Кнопки меню на всю ширину */
+        text-align: center; /* Центрирование текста в ссылках */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px; /* Ещё большее уменьшение для очень маленьких экранов */
+    }
+
+    button {
+        font-size: 16px; /* Уменьшение шрифта кнопки для мобильных устройств */
+    }
+}
+
+
+
+
+.cart-table, .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th, .orders-table th, 
+.cart-table td, .orders-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.cart-table th, .orders-table th {
+    background-color: #f4f4f4;
+}
+
+.checkout-button, .back-to-menu-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.checkout-button:hover, .back-to-menu-button:hover {
+    background-color: #45a049;
+}
+
+.delivery-info {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.delivery-info h3 {
+    margin-top: 20px;
+}
+
+.delivery-info ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
